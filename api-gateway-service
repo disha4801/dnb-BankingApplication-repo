@@ -2,10 +2,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: ACCOUNTMANAGEMENT-SERVICE
-          uri: lb://ACCOUNTMANAGEMENT-SERVICE
+        - id: ACCOUNT-SERVICE
+          uri: lb://ACCOUNT-SERVICE
           predicates:
-            - Path=/accountmanagement/**
+            - Path=/account/**
 server:
   port: 9191
   error:
