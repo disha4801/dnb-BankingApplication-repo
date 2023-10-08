@@ -12,6 +12,10 @@ spring:
           uri: lb://ACCOUNT-SERVICE
           predicates:
             - Path= /api/account/**
+        - id: MANAGEMENT-SERVICE
+          uri: lb://MANAGEMENT-SERVICE
+          predicates:
+            - Path= /api/loan/**
 server:
   port: 9191
 management:
