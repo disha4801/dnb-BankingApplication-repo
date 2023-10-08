@@ -23,9 +23,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-  instance:
-    lease-renewal-interval-in-seconds: 30
 jwt:
   secret: mySecretKey
-  expireMs: 12000000
-  refrEshexpireMs: 12000000
+  expireMs: 1800000
+  refrEshexpireMs: 1800000
