@@ -1,31 +1,31 @@
 spring:
+  application:
+    name: api-gateway-service
   cloud:
     gateway:
       routes:
         - id: AUTH-SERVICE
           uri: lb://AUTH-SERVICE
           predicates:
-            - Path=/api/authenticate/**
+            - Path= /api/authenticate/**
         - id: ACCOUNT-SERVICE
           uri: lb://ACCOUNT-SERVICE
           predicates:
-            - Path=/api/account/**
+            - Path= /api/account/**
 server:
-  port: 9000
-  error:
-    include-message: always
-eureka:
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/ 
+  port: 9191
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 30
 jwt:
   secret: mySecretKey
-  expireMs: 7200000
-  refreshExpireMs: 7200000
+  expireMs: 12000000
+  refrEshexpireMs: 12000000
